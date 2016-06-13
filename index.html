@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find a ferry route using Geolocation and Google Maps API</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/nyc-ferry-station-list.js"></script>
+    <script type="text/javascript" src="js/nyc-ferry-station-groups.js"></script>
+    <script type="text/javascript" src="js/ferry-service.js"></script>
+    <script type="text/javascript" src="js/autocomplete.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+    <h1>Calculate your route</h1>
+    <form id="calculate-route" name="calculate-route" action="#" method="get">
+
+
+      <div class="address">
+		<label for="from">From:</label>
+		<input type="text"  name="from" id="from" class="autocomplete" required="required" placeholder="Enter the origin address" size="30" />
+		<a href="#" class="geolocation" id="from-link">Get the current location</a>
+
+		<table id="from-address">
+			<tr>
+				<td>Street adress</td>
+				<td>
+					<input type="text" name="" class="street_number" >
+				</td>
+				<td>
+					<input type="text" name="" class="route" >
+				</td>
+			</tr>
+			<tr>
+				<td>Borough</td>
+				<td><input type="text" name="" class="sublocality_level_1"></td>
+			</tr>
+			<tr>
+				<td>City</td>
+				<td><input type="text" name="" class="locality"></td>
+			</tr>
+				<tr>
+				<td>County</td>
+				<td><input type="text" name="" class="administrative_area_level_2"></td>
+			</tr>
+			<tr>
+				<td>State</td>
+				<td><input type="text" name="" class="administrative_area_level_1"></td>
+				<td>Zipcode</td>
+				<td><input type="text" name="" class="postal_code"></td>
+			</tr>
+			<tr>
+				<td>Country</td>
+				<td><input type="text" name="" class="country"></td>
+			</tr>
+			<tr>
+				<td>Lat</td>
+				<td><input type="text" name="" class="latitude"></td>
+				<td>Lng</td>
+				<td><input type="text" name="" class="longitude"></td>
+			</tr>
+		</table>
+      </div>	
+    
+      <br />
+
+      <div class="address">
+      	
+		<label for="to">To:</label>
+		<input type="text" name="to" id="to" class="autocomplete" required="required" placeholder="Enter the destination address" size="30" />
+		<a href="#" class="geolocation" id="to-link">Get the current location</a>
+
+		<table id="to-address">
+			<tr>
+				<td>Street adress</td>
+				<td>
+					<input type="text" name="" class="street_number" >
+				</td>
+				<td>
+					<input type="text" name="" class="route" >
+				</td>
+			</tr>
+			<tr>
+				<td>Borough</td>
+				<td><input type="text" name="" class="sublocality_level_1"></td>
+			</tr>
+			<tr>
+				<td>City</td>
+				<td><input type="text" name="" class="locality"></td>
+			</tr>
+			</tr>
+				<tr>
+				<td>County</td>
+				<td><input type="text" name="" class="administrative_area_level_2"></td>
+			</tr>
+			<tr>
+				<td>State</td>
+				<td><input type="text" name="" class="administrative_area_level_1"></td>
+				<td>Zipcode</td>
+				<td><input type="text" name="" class="postal_code"></td>
+			</tr>
+			<tr>
+				<td>Country</td>
+				<td><input type="text" name="" class="country"></td>
+			</tr>
+			<tr>
+				<td>Lat</td>
+				<td><input type="text" name="" class="latitude"></td>
+				<td>Lng</td>
+				<td><input type="text" name="" class="longitude"></td>
+			</tr>
+		</table>
+
+      </div>
+
+      <br />
+      
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+
+
+    <div id="map"></div>
+    <p id="error"></p>
+</body>
+</html>
